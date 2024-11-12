@@ -34,7 +34,12 @@
         "quickstart",
         "development",
         "essentials/markdown",
-        "essentials/code",
+        "essentials/code"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
         {
           "name": "API Reference",
           "url": "api-reference",
