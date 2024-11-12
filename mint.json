@@ -27,13 +27,6 @@
       "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    }
-  ],
   "navigation": [
     {
       "group": "Documentation",
