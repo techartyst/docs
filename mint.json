@@ -22,11 +22,6 @@
   ],
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference",
-      "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
-    },
-    {
       "name": "Documentation",
       "url": "documentation"
     }
@@ -39,7 +34,12 @@
         "quickstart",
         "development",
         "essentials/markdown",
-        "essentials/code"
+        "essentials/code",
+        {
+          "name": "API Reference",
+          "url": "api-reference",
+          "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
+        }
       ]
     }
   ],
