@@ -25,17 +25,21 @@
       "name": "API Reference",
       "url": "api-reference",
       "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
-    }
-  ],
-  "navigation": [
+    },
     {
-      "group": "Documentation",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development",
-        "essentials/markdown",
-        "essentials/code"
+      "name": "Documentation",
+      "url": "documentation",
+      "navigation": [
+        {
+          "group": "Documentation",
+          "pages": [
+            "introduction",
+            "quickstart",
+            "development",
+            "essentials/markdown",
+            "essentials/code"
+          ]
+        }
       ]
     }
   ],
