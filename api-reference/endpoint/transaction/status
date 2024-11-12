@@ -1,0 +1,19 @@
+---
+title: "Check Payment Status"
+openapi: "POST /payment-links/status"
+---
+
+# Check Payment Status
+
+This endpoint allows merchants to check the status of a payment using a unique transaction reference.
+
+## Request Body
+
+- **transactionReference** (string, required): The unique reference identifier for the payment transaction you want to check.
+
+### Example Request
+
+```json
+{
+  "transactionReference": "txn_123456789"
+}
