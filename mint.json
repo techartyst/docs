@@ -27,26 +27,6 @@
       "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
     }
   ],
-  "navigation": [
-    {
-      "group": "Documentation",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development",
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets",
-        "api-reference/introduction",
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
-    }
-  ],
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
