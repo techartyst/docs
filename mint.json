@@ -38,20 +38,15 @@
       ]
     },
     {
-      "group": "API Reference",
-      "subgroups": [
-        {
-          "group": "Payment Links",
-          "pages": [
-            "api-reference/endpoint/pay"
-          ]
-        },
-        {
-          "group": "Transactions",
-          "pages": [
-            "api-reference/transactions/status"
-          ]
-        }
+      "group": "Payment Links",
+      "pages": [
+        "api-reference/endpoint/pay"
+      ]
+    },
+    {
+      "group": "Transactions",
+      "pages": [
+        "api-reference/transactions/status"
       ]
     }
   ],
