@@ -7,7 +7,7 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
+    "primary": "red",
     "light": "#07C983",
     "dark": "#0D9373",
     "anchors": {
@@ -25,7 +25,7 @@
     {
       "name": "API Reference",
       "url": "api-reference",
-            "openapi": "openapi.json"
+            "openapi": "/docs/api-reference/openapi.json"
 
     }
   ],
