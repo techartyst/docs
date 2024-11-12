@@ -62,8 +62,8 @@
         }
       }
     },
-    "/payment-links/status": {
-      "post": {
+    "/transaction/status": {
+      "get": {
         "description": "Checks the status of a payment link based on transaction reference.",
         "requestBody": {
           "description": "Transaction reference for querying the payment status.",
