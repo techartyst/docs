@@ -1,6 +1,6 @@
 ---
 title: "Check Payment Status"
-openapi: "POST /payment-links/status"
+openapi: "GET /transaction/status"
 ---
 
 # Check Payment Status
