@@ -29,7 +29,6 @@
   ],
   "navigation": [
     {
-      "group": "Documentation",
       "pages": [
         "introduction",
         "quickstart",
