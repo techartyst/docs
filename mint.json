@@ -40,11 +40,10 @@
     {
       "group": "API Reference",
       "pages": [
-        {
-          "name": "API Reference",
-          "url": "api-reference",
-          "openapi": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
-        }
+        "api-reference/introduction",
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
       ]
     }
   ],
