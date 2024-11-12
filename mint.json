@@ -25,7 +25,7 @@
     {
       "name": "API Reference",
       "url": "api-reference",
-            "openapi": "/docs/openapi.json"
+            "openapi": "https://developers.google.com/static/standard-payments/v1/payment-processor-service-api/open-api-spec.json"
 
     }
   ],
