@@ -1,4 +1,23 @@
 ---
-title: 'Get Payments'
-openapi: 'GET /payments'
+title: "Create Payment Link"
+openapi: "POST /payment-links/create"
 ---
+
+# Create Payment Link
+
+This endpoint allows merchants to generate a payment link with customer-specific details such as name, amount, and notes.
+
+## Request Body
+
+- **name** (string, required): The name of the customer for whom the payment link is being created.
+- **amount** (float, required): The amount for the payment.
+- **notes** (string, optional): Any additional information or description for the payment.
+
+### Example Request
+
+```json
+{
+  "name": "John Doe",
+  "amount": 50.00,
+  "notes": "Payment for services rendered"
+}
