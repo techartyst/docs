@@ -25,7 +25,7 @@
     {
       "name": "API Reference",
       "url": "api-reference",
-            "openapi": "./api-reference/openapi.json"
+            "openapi": "https://github.com/techartyst/docs/blob/4ce79bf544863638819a41828d396adddc1c34af/api-reference/openapi.json"
 
     }
   ],
