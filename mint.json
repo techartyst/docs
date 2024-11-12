@@ -17,18 +17,18 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:hi@op.com"
     }
   ],
   "tabs": [
     {
-      "name": "Documentation",
+      "name": "API Docs",
       "url": "documentation"
     }
   ],
   "navigation": [
     {
-      "group": "Documentation",
+      "group": "Starter Kit",
       "pages": [
         "introductions",
         "quickstart",
