@@ -28,18 +28,18 @@
     },
     {
       "name": "Documentation",
-      "url": "documentation",
-      "navigation": [
-        {
-          "group": "Documentation",
-          "pages": [
-            "introduction",
-            "quickstart",
-            "development",
-            "essentials/markdown",
-            "essentials/code"
-          ]
-        }
+      "url": "documentation"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Documentation",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "development",
+        "essentials/markdown",
+        "essentials/code"
       ]
     }
   ],
