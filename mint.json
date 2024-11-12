@@ -21,6 +21,16 @@
       "url": "mailto:hi@mintlify.com"
     }
   ],
+  {
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference",
+      "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
+    }
+  ]
+},
+
   "tabs": [
     {
       "name": "API Reference",
