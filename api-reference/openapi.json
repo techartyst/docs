@@ -58,113 +58,25 @@
             }
           }
         }
-      },
+      }
+    },
+    "/payment-links/create": {
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Creates a new payment link with specified details.",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "Details for the payment link to create.",
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/CreatePaymentRequest"
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
-            "description": "Plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/payments": {
-      "get": {
-        "description": "Generates a payment link based on provided details",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Name of the customer",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "amount",
-            "in": "query",
-            "description": "Amount for the payment",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
-          },
-          {
-            "name": "notes",
-            "in": "query",
-            "description": "Additional notes for the payment",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Payment link response",
+            "description": "Payment link created successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -174,7 +86,45 @@
             }
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "Invalid input or error in creating payment link.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/payment-links/status": {
+      "post": {
+        "description": "Checks the status of a payment link based on transaction reference.",
+        "requestBody": {
+          "description": "Transaction reference for querying the payment status.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusCheckRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Payment status response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or error in retrieving payment status.",
             "content": {
               "application/json": {
                 "schema": {
@@ -189,55 +139,32 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
+      "CreatePaymentRequest": {
         "type": "object",
+        "required": ["name", "amount"],
         "properties": {
           "name": {
-            "description": "The name of the plant",
-            "type": "string"
+            "type": "string",
+            "description": "The name of the customer."
           },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
+          "amount": {
+            "type": "number",
+            "format": "float",
+            "description": "The amount for the payment."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes for the payment, if any."
           }
         }
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
+      "StatusCheckRequest": {
         "type": "object",
+        "required": ["transactionReference"],
         "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
+          "transactionReference": {
+            "type": "string",
+            "description": "Unique reference for the transaction to check status."
           }
         }
       },
@@ -245,9 +172,50 @@
         "type": "object",
         "properties": {
           "paymentLink": {
-            "description": "The generated URL for the payment",
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "description": "The URL generated for the payment link."
+          }
+        }
+      },
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Current status of the payment (e.g., 'Pending', 'Completed', 'Failed')."
+          },
+          "transactionReference": {
+            "type": "string",
+            "description": "Unique reference of the queried transaction."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Error code representing the type of error."
+          },
+          "message": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        }
+      },
+      "Plant": {
+        "required": ["name"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the plant."
+          },
+          "tag": {
+            "type": "string",
+            "description": "Tag to specify the type."
           }
         }
       }
