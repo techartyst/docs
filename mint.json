@@ -2,7 +2,7 @@
   "name": "API docs",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/images/omnispay-logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
