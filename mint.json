@@ -1,4 +1,4 @@
-{
+dp{
   "name": "Starter Kit",
   "logo": {
     "dark": "/logo/dark.svg",
@@ -46,7 +46,7 @@
     {
       "group": "Transactions",
       "pages": [
-        "api-reference/transaction/status"
+        "api-reference/endpoint/transaction/status"
       ]
     }
   ],
