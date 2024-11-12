@@ -44,10 +44,7 @@
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete",
-        {
-          "name": "OpenAPI JSON",
-          "url": "https://api.apis.guru/v2/specs/adyen.com/PaymentService/68/openapi.json"
-        }
+        "api-reference/openapi"
       ]
     }
   ],
