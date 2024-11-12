@@ -30,7 +30,7 @@
     {
       "group": "Documentation",
       "pages": [
-        "introduction",
+        "introductions",
         "quickstart",
         "development",
         "essentials/markdown",
@@ -46,7 +46,7 @@
     {
       "group": "Transactions",
       "pages": [
-        "api-reference/transactions/status"
+        "api-reference/transaction/status"
       ]
     }
   ],
