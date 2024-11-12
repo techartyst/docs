@@ -41,10 +41,8 @@
       "group": "API Reference",
       "pages": [
         "api-reference/introduction",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete",
-                "api-reference/endpoint/pay"
-
+        "api-reference/endpoint/pay",
+        "api-reference/endpoint/transaction/status"
       ]
     }
   ],
