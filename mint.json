@@ -25,7 +25,6 @@
     {
       "name": "API Reference",
       "url": "api-reference",
-            "openapi": "https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/ec4d8f36a6ab0abcc3865e1072aaddc85ea14d5c/openapi/payments_payment_v1.json"
 
     }
   ],
