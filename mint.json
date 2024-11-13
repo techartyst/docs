@@ -39,9 +39,7 @@
             "api-reference/endpoint/pay",
             "api-reference/endpoint/pay",
           ]
-        },
-        "essentials/markdown",
-        "essentials/code"
+        }
       ]
     },
     {
