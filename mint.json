@@ -36,8 +36,10 @@
         {
           "group": "Reference",
           "pages": [
-            "api-reference/error-codes",
-            "api-reference/statuses"
+            "api-reference/transactionstatus",
+            "api-reference/currencies",
+            "api-reference/error codes",
+            "api-reference/test cards"
           ]
         }
       ]
