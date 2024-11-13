@@ -38,20 +38,33 @@
       ]
     },
     {
-      "group": "Payment Links",
-      "pages": [
-        "api-reference/endpoint/pay"
+      "group": "Payments",
+      "subgroups": [
+        {
+          "subgroup": "Payment Links",
+          "pages": [
+            "api-reference/endpoint/pay",
+            "api-reference/endpoint/link/create",
+            "api-reference/endpoint/link/delete"
+          ]
+        }
       ]
     },
     {
       "group": "Transactions",
-      "pages": [
-        "api-reference/endpoint/transaction/status"
+      "subgroups": [
+        {
+          "subgroup": "Transaction Status",
+          "pages": [
+            "api-reference/endpoint/transaction/status",
+            "api-reference/endpoint/transaction/history"
+          ]
+        }
       ]
     }
   ],
   "footerSocials": {
     "linkedin": "https://www.linkedin.com/company/omnispay-llc/",
-    "web": "https://www.omnispay.com/",
+    "web": "https://www.omnispay.com/"
   }
 }
