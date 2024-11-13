@@ -196,6 +196,11 @@
             "format": "float",
             "description": "Total amount for the payment, formatted to two decimal places."
           },
+          "currency": {
+            "type": "string",
+            "description": "Currency for the transaction, defaulted to AED.",
+            "default": "AED"
+          },
           "notes": {
             "type": "string",
             "description": "Optional additional notes for the payment, up to 255 characters."
@@ -218,7 +223,8 @@
           "paymentLink": {
             "type": "string",
             "format": "uri",
-            "description": "URL that directs the customer to the payment page for completing the transaction."
+            "description": "URL that directs the customer to the payment page for completing the transaction.",
+            "example": "https://testpay.op.com/y1uU1282"
           }
         }
       },
@@ -238,14 +244,29 @@
       "Error": {
         "type": "object",
         "properties": {
-          "error": {
+          "errorCode": {
             "type": "integer",
             "format": "int32",
-            "description": "HTTP status code representing the type of error (e.g., 400 for bad request, 401 for unauthorized)."
+            "description": "Specific code representing the error (e.g., 400 for bad request, 401 for unauthorized)."
           },
-          "message": {
+          "errorDescription": {
             "type": "string",
             "description": "Detailed description of the error encountered, providing additional context."
+          },
+          "resources": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the help resource for troubleshooting."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL link to help resource for further assistance.",
+                "example": "https://help.op.com/errorcodes"
+              }
+            }
           }
         }
       }
