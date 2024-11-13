@@ -49,7 +49,6 @@
       "pages": [
         {
           "group": "Payment Links",
-          "expanded": true,
           "pages": [
             "api-reference/endpoint/pay",
             "api-reference/endpoint/link/create",
