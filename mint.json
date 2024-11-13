@@ -28,7 +28,7 @@
   ],
   "navigation": [
     {
-      "group": "Starter Kit",
+      "group": "API Docs",
       "pages": [
         "introductions",
         "quickstart",
@@ -51,8 +51,7 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "linkedin": "https://www.linkedin.com/company/omnispay-llc/",
+    "web": "https://www.omnispay.com/",
   }
 }
