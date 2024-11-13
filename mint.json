@@ -35,15 +35,9 @@
         "authentication",
         {
           "group": "Reference",
-          "pages": [
-            {
-              "name": "Error Codes",
-              "url": "api-reference/error-codes"
-            },
-            {
-              "name": "Statuses",
-              "url": "api-reference/statuses"
-            }
+          "pages": [            
+            "api-reference/endpoint/pay",
+            "api-reference/endpoint/pay",
           ]
         },
         "essentials/markdown",
