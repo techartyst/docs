@@ -39,9 +39,9 @@
     },
     {
       "group": "Payments",
-      "subgroups": [
+      "pages": [
         {
-          "subgroup": "Payment Links",
+          "group": "Payment Links",
           "pages": [
             "api-reference/endpoint/pay",
             "api-reference/endpoint/link/create",
@@ -52,9 +52,9 @@
     },
     {
       "group": "Transactions",
-      "subgroups": [
+      "pages": [
         {
-          "subgroup": "Transaction Status",
+          "group": "Transaction Status",
           "pages": [
             "api-reference/endpoint/transaction/status",
             "api-reference/endpoint/transaction/history"
@@ -63,8 +63,14 @@
       ]
     }
   ],
-  "footerSocials": {
-    "linkedin": "https://www.linkedin.com/company/omnispay-llc/",
-    "web": "https://www.omnispay.com/"
-  }
+  "footerSocials": [
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/company/omnispay-llc/"
+    },
+    {
+      "name": "website",
+      "url": "https://www.omnispay.com/"
+    }
+  ]
 }
