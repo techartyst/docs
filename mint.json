@@ -32,7 +32,7 @@
       "pages": [
         "introductions",
         "quickstart",
-        "development",
+        "authentication",
         "essentials/markdown",
         "essentials/code"
       ]
