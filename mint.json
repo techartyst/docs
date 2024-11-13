@@ -33,15 +33,7 @@
         "introductions",
         "quickstart",
         "authentication",
-        {
-          "group": "Reference",
-          "pages": [
-            "references/transactionstatus",
-            "references/currencies",
-            "references/errorcodes",
-            "references/testcards"
-          ]
-        }
+         "references/reference"
       ]
     },
     {
