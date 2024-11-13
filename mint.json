@@ -33,6 +33,19 @@
         "introductions",
         "quickstart",
         "authentication",
+        {
+          "group": "Reference",
+          "pages": [
+            {
+              "name": "Error Codes",
+              "url": "api-reference/error-codes"
+            },
+            {
+              "name": "Statuses",
+              "url": "api-reference/statuses"
+            }
+          ]
+        },
         "essentials/markdown",
         "essentials/code"
       ]
