@@ -63,14 +63,10 @@
       ]
     }
   ],
-  "footerSocials": [
-    {
-      "name": "linkedin",
-      "url": "https://www.linkedin.com/company/omnispay-llc/"
-    },
-    {
-      "name": "x",
-      "url": "https://www.omnispay.com/"
-    }
+  "footerSocials": {
+    "x": "https://x.com/mintlify",
+    "github": "https://github.com/mintlify",
+    "linkedin": "https://linkedin.com/company/mintlify"
+  }
   ]
 }
