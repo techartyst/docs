@@ -35,9 +35,9 @@
         "authentication",
         {
           "group": "Reference",
-          "pages": [            
-            "api-reference/endpoint/pay",
-            "api-reference/endpoint/pay",
+          "pages": [
+            "api-reference/error-codes",
+            "api-reference/statuses"
           ]
         }
       ]
