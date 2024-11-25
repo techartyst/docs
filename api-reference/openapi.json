@@ -1,1 +1,283 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "O Payments",
+    "description": "The APIs that enable our merchants to process payments and check payment statuses.",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://pro.op.com",
+      "description": "Production server"
+    },
+    {
+      "url": "https://staging1.op.com",
+      "description": "Sandbox server for testing and integration without affecting live data"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/payment-links/create": {
+      "post": {
+        "description": "Creates a new payment link with specified details, allowing customers to make a payment by accessing the generated URL.",
+        "requestBody": {
+          "description": "Details required to create a payment link, including customer name and payment amount.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Payment link created successfully with a URL returned for customer payment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentLinkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input provided or an error occurred while creating the payment link.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request. Ensure that a valid bearer token is included.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required but not fulfilled. Check if all necessary payments have been made.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden request. The user does not have permission to create a payment link.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error. An unexpected error occurred on the server while processing the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction/status": {
+      "get": {
+        "description": "Retrieves the status of a specific payment transaction by transaction reference.",
+        "requestBody": {
+          "description": "Provides the transaction reference to query and check the payment's current status.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusCheckRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the payment status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid transaction reference or request format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request. Ensure that a valid bearer token is provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden access. The user does not have permission to check this transaction's status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Transaction not found. Ensure the transaction reference is correct.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error. An unexpected error occurred on the server while processing the status check.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreatePaymentRequest": {
+        "type": "object",
+        "required": ["name", "amount"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Customer's name associated with the payment."
+          },
+          "amount": {
+            "type": "number",
+            "format": "float",
+            "description": "Total amount for the payment, formatted to two decimal places."
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency for the transaction, defaulted to AED.",
+            "default": "AED"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Optional additional notes for the payment, up to 255 characters."
+          }
+        }
+      },
+      "StatusCheckRequest": {
+        "type": "object",
+        "required": ["transactionReference"],
+        "properties": {
+          "transactionReference": {
+            "type": "string",
+            "description": "Unique identifier for the transaction being queried, typically provided at the time of transaction initiation."
+          }
+        }
+      },
+      "PaymentLinkResponse": {
+        "type": "object",
+        "properties": {
+          "paymentLink": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL that directs the customer to the payment page for completing the transaction.",
+            "example": "https://testpay.op.com/y1uU1282"
+          }
+        }
+      },
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Current status of the payment transaction (e.g., 'Pending', 'Completed', 'Failed', 'Cancelled')."
+          },
+          "transactionReference": {
+            "type": "string",
+            "description": "The transaction reference originally used to query the status."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Specific code representing the error (e.g., 400 for bad request, 401 for unauthorized)."
+          },
+          "errorDescription": {
+            "type": "string",
+            "description": "Detailed description of the error encountered, providing additional context."
+          },
+          "resources": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the help resource for troubleshooting."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL link to help resource for further assistance.",
+                "example": "https://help.op.com/errorcodes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Bearer authentication token required to authorize API requests. Obtain this token via the authentication endpoint and include it in all API requests."
+      }
+    }
+  }
+}
 
