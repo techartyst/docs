@@ -24,7 +24,7 @@
     }
   ],
   "paths": {
-    "/payment-links/createpay": {
+    "/payment-links/create": {
       "post": {
         "description": "Creates a new payment link with specified details, allowing customers to make a payment by accessing the generated URL.",
         "requestBody": {
