@@ -33,6 +33,14 @@
       "pages": [
         "static-docs/introduction.mdx"
       ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        {
+          "openapi": true
+        }
+      ]
     }
   ],
   "footerSocials": {
