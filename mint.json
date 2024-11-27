@@ -37,7 +37,7 @@
     {
       "group": "API Reference",
       "pages": [
-        "api-reference/openapi.mdx"
+        "api-reference/endpoint/create.mdx"
       ]
     }
   ],
