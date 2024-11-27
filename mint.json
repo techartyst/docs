@@ -44,7 +44,7 @@
           "pages": [
             "api-reference/endpoint/pay",
             "api-reference/endpoint/link/create",
-            "api-reference/endpoint/link/delete"
+            "api-reference/endpoint/delete"
           ]
         }
       ]
