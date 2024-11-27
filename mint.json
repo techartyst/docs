@@ -26,43 +26,7 @@
       "url": "documentation"
     }
   ],
-  "navigation": [
-    {
-      "group": "API Docs",
-      "pages": [
-        "introductions",
-        "quickstart",
-        "authentication",
-         "references/metadata"
-      ]
-    },
-    {
-      "group": "Payments",
-      "pages": [
-        {
-          "group": "Payment Links",
-          "pages": [
-            "api-reference/endpoint/pay",
-            "api-reference/endpoint/link/create",
-            "api-reference/endpoint/link/delete"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Transactions",
-      "pages": [
-        {
-          "group": "Transaction Status",
-          "pages": [
-            "api-reference/endpoint/transaction/status",
-            "api-reference/endpoint/transaction/history"
-          ]
-        }
-      ]
-    }
-  ],
-  "specs": "./api-reference/openapi.json",
+  "specs": "./specs/openapi.json",
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
