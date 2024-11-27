@@ -37,9 +37,7 @@
     {
       "group": "API Reference",
       "pages": [
-        {
-          "openapi": true
-        }
+        "api-reference/openapi.mdx"
       ]
     }
   ],
