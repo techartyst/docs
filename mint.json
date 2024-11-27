@@ -26,9 +26,9 @@
       "url": "documentation"
     }
   ],
-  "specs": "./specs/openapi.json",
+  "specs": "./ap-reference/openapi.json",
   "footerSocials": {
-    "x": "https://x.com/mintlify",
+    "x": "https://x.com/mintlifys",
     "github": "https://github.com/mintlify",
     "linkedin": "https://linkedin.com/company/mintlify"
   }
