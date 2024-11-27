@@ -37,6 +37,18 @@
       ]
     },
     {
+      "group": "Authentication",
+      "pages": [
+        {
+          "group": "Authentication",
+          "pages": [
+            "api-reference/endpoint/login",
+            "api-reference/endpoint/logout"
+          ]
+        }
+      ]
+    },
+    {
       "group": "Payments",
       "pages": [
         {
