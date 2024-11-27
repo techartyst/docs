@@ -27,6 +27,14 @@
     }
   ],
   "specs": "./ap-reference/openapi.json",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "static-docs/introduction.mdx"
+      ]
+    }
+  ],
   "footerSocials": {
     "x": "https://x.com/mintlifys",
     "github": "https://github.com/mintlify",
